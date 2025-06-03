@@ -1,8 +1,13 @@
 :root {
-    --main-bg: #5d2a48;
+    --main-bg: #551239;
+    --color-2: #8b3045;
+    --color-3: #bb574a;
+    --color-4: #df874c;
+    --color-5: #f5be55;
+    --color-6: #f9f871;
 }
 
-body{
+body {
     font-family: JetBrains Mono, monospace;
     color: #f0f0f0;
     background-color: var(--main-bg);
@@ -10,24 +15,27 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 /**
 * Header styles
 */
 .main-heading {
-    color: #ffb86c;
+    color: var(--color-4);
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 h2.section-heading {
-    color: #ffb86c;
+    color: var(--color-4);
     text-align: left;
     margin-bottom: 24px;
     margin-top: 32px;
-    font-size: 2.2em;
+    font-size: 1.6em;
     font-weight: bold;
     padding: 12px 32px;
     background: linear-gradient(270deg, var(--main-bg) 60%, #ffb86c22 100%);
@@ -42,17 +50,20 @@ h2.section-heading {
 * link styles
 */
 a {
-    color: #67d4ff;
+    /*color: #67d4ff;*/
+    color: var(--color-5);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #71ff6c;
+    /*color: #71ff6c;*/
+    color: var(--color-6);
 }
 
 .hidden-link {
-    color: inherit; /* Override default link color */
+    color: inherit;
+    /* Override default link color */
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -61,17 +72,29 @@ a:hover {
 * List styles
 */
 ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
 }
+
 li {
-    list-style: disc;
+    position: relative;
     margin: 10px 0;
+    padding-left: 1.5em;
     transition: color 0.8s ease;
 }
 
-li:hover {
-    list-style: square;
-    color: #ffb86c;
+li::before {
+    content: "⏹";
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    color: var(--color-5);
+    transform: rotate(-45deg);
+    transition: color 0.3s ease, transform 0.6s ease;
+}
+
+li:hover::before {
+    content: "▶";
+    transform: rotate(0deg);
 }
