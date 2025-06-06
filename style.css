@@ -37,6 +37,7 @@ h2.section-heading {
     margin-top: 32px;
     font-size: 1.6em;
     font-weight: bold;
+    width: 100%;
     padding: 12px 32px;
     background: linear-gradient(270deg, var(--main-bg) 60%, #ffb86c22 100%);
     border-left: 6px solid #ffb86c;
@@ -44,6 +45,9 @@ h2.section-heading {
     box-shadow: 2px 4px 16px #0002;
     letter-spacing: 1px;
     text-shadow: 1px 1px 2px #0008;
+
+    margin-left: 0;
+    margin-right: auto;
 }
 
 /**
@@ -85,16 +89,43 @@ li {
 }
 
 li::before {
-    content: "⏹";
+    content: "";
     position: absolute;
     left: 0;
-    font-size: 1.2em;
-    color: var(--color-5);
-    transform: rotate(-45deg);
-    transition: color 0.3s ease, transform 0.6s ease;
+    top: 0.45em;
+    width: 0.8em;
+    height: 0.8em;
+    background: var(--color-5);
+    border-radius: 2px;
+    transform: rotate(0deg);
+    transition: transform 0.6s;
 }
 
 li:hover::before {
-    content: "▶";
-    transform: rotate(0deg);
+    transform: rotate(45deg);
+    background: var(--color-6);
+}
+
+@media (max-width: 600px) {
+    body {
+        margin-left: 4vw;
+        margin-right: 4vw;
+        font-size: 1em;
+    }
+
+    .main-heading {
+        font-size: 1.3em;
+        padding: 8px 0;
+    }
+
+    h2.section-heading {
+        font-size: 1.1em;
+        padding: 8px 12px;
+        border-radius: 0 8px 8px 0;
+    }
+
+    ul, li {
+        padding-left: 1.5em;
+        font-size: 1em;
+    }
 }
