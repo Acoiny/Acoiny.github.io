@@ -30,7 +30,7 @@ body {
     margin-bottom: 20px;
 }
 
-h2.section-heading {
+.section-heading {
     color: var(--color-4);
     text-align: left;
     margin-bottom: 24px;
@@ -48,6 +48,10 @@ h2.section-heading {
 
     margin-left: 0;
     margin-right: auto;
+}
+
+h3.section-heading {
+    font-size: 1em;
 }
 
 /**
